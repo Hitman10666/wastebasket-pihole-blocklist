@@ -1,0 +1,85 @@
+! Title: Personal Pi-hole blocklist
+! Description: Domains not covered by HaGeZi Pro/TIF or OISD Big that are still worth blocking.
+! Format: Adblock (||domain^ also blocks every subdomain). Supported by Pi-hole v6.
+! Add a line, commit, and Pi-hole picks it up at the next gravity update.
+
+! ---- Ads / ad networks ----
+||alitems.com^
+||cpxadroit.com^
+||monetag.com^
+||loadercdn.com^
+||r.mradx.net^
+||realcastmedia.com^
+||business.opera.com^
+||imasdk.googleapis.com^
+||tapresearch.com^
+||your-surveys.com^
+
+! ---- Ad reinsertion / anti-adblock (Reuters etc.; previously manual regex) ----
+||html-load.com^
+||content-loader.com^
+||zowiejump.com^
+||quietlythough.com^
+||aridround.com^
+||betweenbrr.com^
+||nicelyeven.com^
+||tilljoyfully.com^
+||reallywire.com^
+||daintilyrare.com^
+||similaroof.com^
+
+! ---- Tracking / telemetry ----
+||adjust.io^
+||airbrake.io^
+||rollbar.com^
+||thecounter.com^
+||ecbsn.com^
+||umwatson.events.data.microsoft.com^
+||analytics.fbgcdn.com^
+||prism-tracking.pacvue.com^
+||adtech-cdn.theglobeandmail.com^
+
+! ---- Previously manual exact/regex entries ----
+||joclick.xyz^
+||ipywev.com^
+||ads-flipp.com^
+||vidyard.com^
+
+! ---- Malware / phishing / scareware ----
+||mothertouch.ac.zw^
+||registrycleanerfree.blogspot.com^
+||allegrolokalnie.oferta-7415412.cfd^
+||ambrokurier.pro^
+||ledgerweb.exchange^
+||adjust-local-settings.com^
+
+! ---- Scams, "free hacks" generators, warez (from Spam404) ----
+||cracking.org^
+||cyber-hub.net^
+||dldzfr.com^
+||dlupload.com^
+||dmsocialspy.com^
+||downloadtime.org^
+||easygames24.com^
+||flixaddict.com^
+||followhack.com^
+||freetophacks.com^
+||growtopia.work^
+||hacksday.com^
+||ibreak.us^
+||masszip.com^
+||mctrades.org^
+||movielio.com^
+||mp3tomidiconverter.net^
+||mp3zer.com^
+||mrcrackworld.com^
+||playhck.com^
+||rpgenerator.net^
+||skidrow-games.com^
+||soundeem.com^
+||thealtening.com^
+||trades-arena.com^
+||uploadrecord.com^
+||cinamuse.com^
+||mypi.co^
+||cf2.me^
