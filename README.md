@@ -1,19 +1,19 @@
-# wastebasket-pihole-blocklist
+# wastebasket-pihole-lists
 
-A personal Pi-hole blocklist for domains that the big lists miss or don't carry yet. It's meant to run alongside:
+Personal Pi-hole block and allow lists, for domains that the big lists miss or don't carry yet. It's meant to run alongside:
 
 - [HaGeZi Multi Pro](https://github.com/hagezi/dns-blocklists) (Adblock format)
 - [HaGeZi Threat Intelligence Feeds](https://github.com/hagezi/dns-blocklists) (Adblock format)
 - [OISD Big](https://oisd.nl)
 
-Everything here was either missed by those lists or caught by them too late, so this one stays small.
+Everything here was either missed by those lists or caught by them too late, so these lists stay small.
 
 ## Use it in Pi-hole
 
 Add this URL under **Lists** in the Pi-hole web UI, then run **Tools → Update Gravity**:
 
 ```
-https://raw.githubusercontent.com/Hitman10666/wastebasket-pihole-blocklist/main/blocklist.txt
+https://raw.githubusercontent.com/Hitman10666/wastebasket-pihole-lists/main/blocklist.txt
 ```
 
 Requires Pi-hole v6 or later, which understands Adblock-style entries.
@@ -23,7 +23,7 @@ Requires Pi-hole v6 or later, which understands Adblock-style entries.
 `allowlist.txt` holds domains that must never be blocked. Add it on the same **Lists** page, but as an **allowlist** rather than a blocklist:
 
 ```
-https://raw.githubusercontent.com/Hitman10666/wastebasket-pihole-blocklist/main/allowlist.txt
+https://raw.githubusercontent.com/Hitman10666/wastebasket-pihole-lists/main/allowlist.txt
 ```
 
 Entries in an allowlist override every blocklist. A plain `example.com` line allows only that exact name. `@@||example.com^` allows the domain and all its subdomains.
