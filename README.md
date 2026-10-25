@@ -18,6 +18,16 @@ https://raw.githubusercontent.com/Hitman10666/wastebasket-pihole-blocklist/main/
 
 Requires Pi-hole v6 or later, which understands Adblock-style entries.
 
+### Allowlist
+
+`allowlist.txt` holds domains that must never be blocked. Add it on the same **Lists** page, but as an **allowlist** rather than a blocklist:
+
+```
+https://raw.githubusercontent.com/Hitman10666/wastebasket-pihole-blocklist/main/allowlist.txt
+```
+
+Entries in an allowlist override every blocklist. A plain `example.com` line allows only that exact name. `@@||example.com^` allows the domain and all its subdomains.
+
 ## Format
 
 One entry per line:
