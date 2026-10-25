@@ -40,9 +40,25 @@ One entry per line:
 
 ## Adding a domain
 
-1. Find the domain in the Pi-hole **Query Log**.
-2. Add `||thedomain.com^` under the matching section in `blocklist.txt`. Use the registrable domain (`tilljoyfully.com`), not a numbered subdomain.
-3. Commit and push. Pi-hole picks it up at its next gravity update, or right away if you run **Update Gravity**.
+### The easy way: the form
+
+1. Open the repo's **Actions** tab (works in the GitHub mobile app too) and pick **Add domain**.
+2. Tap **Run workflow** and fill in:
+   - **Domain**: paste it however you have it. `https://8.word.com/page`, `*.word.com` and `||word.com^` all get cleaned up.
+   - **Which list**: blocklist or allowlist.
+   - **Match type**: *wildcard* covers the domain and every subdomain. *Exact* covers only that one name.
+   - **Note** (optional): why you added it.
+3. Hit **Run workflow**. The run's summary shows whether it was added, skipped as a duplicate, or rejected. It also warns if the domain is on the other list.
+
+New entries go under the "Added via GitHub form" heading at the bottom of each list.
+
+For the rotating ad domains, add the registrable domain (`tilljoyfully.com`) as a wildcard, not a numbered subdomain like `8.tilljoyfully.com`.
+
+### By hand
+
+Edit the file on GitHub and add a line in the right section, then commit.
+
+Either way, Pi-hole picks the change up at its next gravity update (daily, about 4:40am), or right away if you run **Tools → Update Gravity**.
 
 ## Sections
 
