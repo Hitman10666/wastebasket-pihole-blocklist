@@ -54,16 +54,19 @@ jobs:
           set -e
           echo "$out"
           { echo "### $LIST: \`$DOMAIN\` ($match)"; echo; echo '```'; echo "$out"; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
-          [[ $rc -eq 0 ]] && echo "changed=true" >> "$GITHUB_OUTPUT"
+          if [[ $rc -eq 0 ]]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "entry=$(sed -n 's/^ADDED: \(.*\) to .*/\1/p' <<< "$out")" >> "$GITHUB_OUTPUT"
+          fi
           [[ $rc -eq 0 || $rc -eq 3 ]]
 
       - name: Commit
         if: steps.add.outputs.changed == 'true'
         env:
-          DOMAIN: ${{ inputs.domain }}
+          ENTRY: ${{ steps.add.outputs.entry }}
           LIST: ${{ inputs.list }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898729+github-actions[bot]@users.noreply.github.com"
-          git commit -am "Add $DOMAIN to $LIST"
+          git commit -am "Add $ENTRY to $LIST"
           git push

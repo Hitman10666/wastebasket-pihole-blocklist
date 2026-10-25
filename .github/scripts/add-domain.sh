@@ -36,6 +36,17 @@ if grep -qxF -- "$line" "$file"; then
   exit 3
 fi
 
+# A wildcard on a parent domain already covers this name and everything under it.
+[[ "$list" == blocklist ]] && wild_prefix='||' || wild_prefix='@@||'
+parent=$d
+while [[ "$parent" == *.*.* ]]; do
+  parent=${parent#*.}
+  if grep -qxF -- "$wild_prefix$parent^" "$file"; then
+    echo "SKIPPED: $d is already covered by $wild_prefix$parent^ in $file."
+    exit 3
+  fi
+done
+
 # Same domain in the other form (exact vs wildcard) is allowed, but worth knowing.
 for form in "$d" "||$d^" "@@||$d^"; do
   [[ "$form" != "$line" ]] && grep -qxF -- "$form" "$file" && echo "NOTE: $file also has $form."
