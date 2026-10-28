@@ -86,3 +86,5 @@
 ! ---- Added via GitHub form ----
 ! possible from timeanddate.com (2026-10-28)
 ||bluevoox.com^
+! possible from timeanddate.com (2026-10-28)
+||rtb.mx^
