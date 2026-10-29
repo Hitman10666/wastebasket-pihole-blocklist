@@ -88,3 +88,5 @@
 ||bluevoox.com^
 ! possible from timeanddate.com (2026-10-28)
 ||rtb.mx^
+! not sure where this came from maybe Android Authority (2026-10-29)
+||waterfallalder.com^
